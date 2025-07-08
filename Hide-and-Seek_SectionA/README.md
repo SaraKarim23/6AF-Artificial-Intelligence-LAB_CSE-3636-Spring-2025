@@ -101,9 +101,9 @@ With added AI-based Message Validator, the system ensures messages are safe, non
 
             ```bash
             
-            git clone https://github.com/FAH-works/Hide-Seek.git
+            git clone https://github.com/SaraKarim23/6AF-Artificial-Intelligence-LAB_CSE-3636-Spring-2025.git
             
-            cd Hide-Seek
+            cd 6AF-Artificial-Intelligence-LAB_CSE-3636-Spring-2025
 
 
     📁 3. Set Up a Virtual Environment (Optional but recommended)
