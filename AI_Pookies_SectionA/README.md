@@ -52,6 +52,9 @@ The frontend is styled with **Tailwind CSS** and **Bootstrap**, while the backen
 ### 🤖 Prediction Page  
 ![Prediction Page](img/predict.png)
 
+### 📰 News Section  
+![News Section](img/news.png)
+
 ### 📞 Contact Us Page  
 ![Contact Page](img/contact.png)
 
