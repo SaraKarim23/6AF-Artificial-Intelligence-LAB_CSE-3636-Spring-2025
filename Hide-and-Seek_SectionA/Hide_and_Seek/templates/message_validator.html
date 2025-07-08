@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Message Validator | HIDE & SEEK</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+         .banner{
+        background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url('{%static 'image/investigate2.jpg' %}');
+        }  
+
+        .mainwork {
+          width: 80%;
+          height: 400px;
+          margin: 40px auto;
+          background: rgba(255, 255, 255, 0.85);
+          padding: 30px 40px;
+          border-radius: 15px;
+          box-shadow: 0 0 20px rgb(204 160 103 / 0.4);
+          color: rgb(110, 49, 6);
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          transition: height 0.5s ease;
+        }
+        .mainwork h2 {
+          text-align: center;
+          margin-bottom: 25px;
+          border-bottom: 5px solid rgb(228, 154, 101);
+          padding-bottom: 10px;
+          font-weight: 700;
+          font-size: 30px;
+        }
+        form textarea {
+          width: 100%;
+          min-height: 150px;
+          padding: 12px;
+          font-size: 18px;
+          border: 3px inset rgb(228, 154, 101);
+          border-radius: 10px;
+          resize: vertical;
+          font-family: inherit;
+          color: rgb(110, 49, 6);
+          background-color: #fff6db;
+        }
+        form button {
+          display: block;
+          margin: 25px auto 0 auto;
+          background-color: wheat;
+          border: none;
+          color: rgb(110, 49, 6);
+          font-weight: 700;
+          font-size: 18px;
+          padding: 12px 50px;
+          border-radius: 10px;
+          cursor: pointer;
+          box-shadow: 0 0 5px rgb(186 142 57 / 0.7);
+          transition: background-color 0.3s ease;
+        }
+        form button:hover {
+          background-color: rgb(228, 154, 101);
+          color: white;
+        }
+        table {
+          margin: 30px auto 0 auto;
+          border-collapse: collapse;
+          width: 100%;
+          max-width: 900px;
+          font-size: 18px;
+          box-shadow: 0 0 15px rgb(204 160 103 / 0.3);
+          border-radius: 12px;
+          overflow: hidden;
+        }
+        th, td {
+          padding: 15px 18px;
+          border-bottom: 1px solid rgb(228, 154, 101);
+          text-align: left;
+        }
+        th {
+          background-color: rgb(228, 154, 101);
+          color: rgb(110, 49, 6);
+          font-weight: 700;
+        }
+        .status-true {
+          color: green;
+          font-weight: 700;
+          text-align: center;
+          font-size: 24px;
+        }
+        .status-false {
+          color: red;
+          font-weight: 700;
+          text-align: center;
+          font-size: 24px;
+        }
+        .overall-safe {
+          text-align: center;
+          font-size: 22px;
+          margin-top: 40px;
+          font-weight: 700;
+        }
+        .safe {
+          color: green;
+        }
+        .risky {
+          color: red;
+        }
+        #vldt_msg{
+          border: 3px solid wheat;
+          padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="logobar">
+            <h2>HIDE & SEEK</h2>
+            <img src="{% static 'image/logo.jpg' %}" class="icon" alt="icon" />
+        </div>
+
+        <input type="checkbox" id="check" />
+        <label for="check">
+          <i class="fa fa-bars" id="btn"></i>
+          <i class="fa fa-times" id="cancel"></i>
+        </label>
+
+        <div class="side-bar">
+            <div class="profile">
+                {% if request.user.profile.photo %}
+                    <img src="{{ request.user.profile.photo.url }}" alt="Profile Photo" class="pp" />
+                {% else %}
+                    <img src="{% static 'ICONS/profile.png' %}" alt="Default Profile Photo" class="pp" />
+                {% endif %}
+                <h3>{{ request.user }}</h3>
+            </div>
+            <ul>
+                <li>
+                    <a href="{% url 'Changepassword' %}">
+                        <span class="item"><img src="{% static 'ICONS/Change password.png' %}" alt="" class="itempic" />Change Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'login_view' %}" name="login" id="login">
+                        <span class="item"><img src="{% static 'ICONS/logout.png' %}" alt="" class="itempic" />Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="topbar">
+            <ul>
+                <li><a href="{% url 'Home' %}">Home</a></li>
+                <li><a href="{% url 'About' %}">About</a></li>
+                <li>
+                  <a href="#">Gallery</a>
+                  <div class="submenu">
+                    <ul>
+                      <li><a href="{% url 'Gallery1' %}">Encoded Photos<img src="{% static 'ICONS/k.png' %}" alt="" class="logo" /></a></li>
+                      <li><a href="{% url 'Gallery2' %}">To-encode Photos<img src="{% static 'ICONS/unlock.png' %}" alt="" class="logo" /></a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="#" name="vldt_msg" id="vldt_msg">Validate Message</a></li>
+            </ul>
+        </div>
+
+        <div class="intro">
+            <h1>Message Validator</h1>
+        </div>
+    </div>
+
+    <div class="mainwork" id="mn_wrk" name="mn_wrk" 
+    style="height: {% if results %}1100px{% else %}400px{% endif %};">
+        <h2>Message Validator (CSP Based)</h2>
+        <form method="POST" novalidate>
+          {% csrf_token %}
+          <textarea name="message" placeholder="Type or paste your message here...">{{ message|default:'' }}</textarea>
+          <button type="submit" id="vldt_btn" name="vldt_btn"><i class="fas fa-check-circle"></i> Validate Message</button>
+        </form>
+
+        {% if results %}
+        <table id="result_table" name="result_table">
+            <thead>
+                <tr>
+                    <th>Constraint</th>
+                    <th>Status</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for res in results %}
+                <tr>
+                    <td>{{ res.check }}</td>
+                    <td class="status-{{ res.status|yesno:'true,false' }}">
+                        {% if res.status %}✅{% else %}❌{% endif %}
+                    </td>
+                    <td>{{ res.reason }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="overall-safe">
+          {% if overall_safe %}
+            <span class="safe">✅ Message is SAFE to encode!</span>
+          {% else %}
+            <span class="risky">⚠️ Message flagged as RISKY! Please modify before encoding.</span>
+          {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        <h2>Contact Us</h2>
+        <p>For further information and any enquiries/problems, contact the following e-mails:</p><br/>
+        <a href="mailto:c223202@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS/Fairuz.png' %}" class="id" alt="C223202" /></a>
+        <a href="mailto:c223206@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS/Fayeza.png' %}" class="id" alt="C223206" /></a><br />
+        <h3 class="pid">&nbsp&nbsp&nbspC223202&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspC223206</h3>
+    </div>
+
+</body>
+</html>

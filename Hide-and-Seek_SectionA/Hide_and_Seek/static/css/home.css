@@ -1,0 +1,382 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 
+    'Arial Narrow', Arial, sans-serif;
+}
+.banner
+{
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+.logobar
+{
+    display:flex ;
+    justify-content:right;
+    align-items:center;
+    color:rgb(240, 233, 219);
+    margin-right: 70px;
+}
+.icon
+{
+    width: 50px;
+    clip-path:circle();
+}
+.topbar
+{
+    width: 85%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.topbar ul li
+{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+#home
+{
+    border: 3px solid wheat;
+    padding: 7px;
+}
+.side-bar
+{
+background:rgb(137, 91, 41);
+position: fixed;
+right: -250px;
+width: 220px;
+height: 220px;
+transition: all 0.5s ease;
+}
+.side-bar .profile
+{
+    text-align: center;
+}
+.side-bar .profile h3
+{
+    text-transform: uppercase;
+}
+.side-bar .profile img 
+{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    clip-path: circle(50% at center);
+    margin-top: 20px;
+}
+.itempic
+{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+ .side-bar ul li a
+{ 
+    display: block; 
+    border-bottom: 1px solid #f0a174;
+    padding: 3px 10px;
+    color: rgb(241, 237, 237);
+    font-size: 15px;
+    position: relative;
+    font-family: 'open sans', sans-serif;
+}
+ .side-bar ul li a:hover,
+ .sideb-ar ul li a.active
+{
+   color: #3a2106;
+   background:white;
+   border-right: 2px solid rgb(251, 119, 42);
+}
+ .side-bar ul li a:hover .icon,
+ .side-bar ul li a.active .icon{
+     color: #8c7db1;
+}
+ .side-bar ul li a:hover::before,
+ .side-bar ul li a.active::before{
+display: block;
+}
+#check
+{
+    display: none;
+}
+label #btn,
+label #cancel
+{
+position: absolute;
+cursor: pointer;
+background: #763406;
+color: white;
+border-radius: 3px;
+}
+#btn
+{
+    right: 20px;
+    top: 5px;
+    font-size: 25px;
+    padding: 6px 12px; 
+    transition: all 0.5s;
+    color: white;
+    right: 10px;
+}
+#cancel
+{
+    z-index: 1111;
+    font-size: 20px;
+    padding: 4px 9px;
+    top: 17px;
+    color: #482608;
+    position: fixed;
+    transition: all 0.5s ease;
+    display: none;
+}
+#check:checked ~ .side-bar
+{
+    right: 0;
+} 
+#check:checked ~ label #btn 
+{
+    right: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel
+{
+    right: 0px;
+    margin-top: 40px;
+    display: flex;
+}
+.topbar ul li a
+{
+    text-decoration: none;
+    color: rgb(228, 154, 101);
+    text-transform: uppercase;
+}
+.topbar ul li::after
+{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: wheat;
+    position: absolute;
+    right: 0px;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.topbar ul li:hover::after
+{
+    width: 100%;
+}
+.logo
+{
+ height: 30px;
+ width: 30px;
+}
+.submenu
+{
+  display: none;
+}
+.topbar ul li:hover .submenu
+{
+    display: block;
+    position: absolute;
+    color: rgb(228, 154, 101);
+    margin-top: 15px;
+    margin-left: -25px;
+}
+.topbar ul li:hover .submenu ul
+{
+    display: block;
+    margin: 5px;
+}
+.topbar ul li:hover .submenu ul li
+{
+    width: 190px;
+    padding: 10px;
+    border-bottom: 1px#fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;  
+}
+.topbar ul li:hover .submenu ul li:last-child
+{
+  border:none;
+}
+.topbar ul li:hover .submenu ul li a:hover
+{
+    color: #e5ad5f;
+}
+.intro h1
+{
+    color: rgb(231, 231, 184);
+    text-align: center;
+    font-style: italic ;
+    font-size: 35px;
+    padding-top: 25vh;
+}
+.encdec
+{
+    width: 100%;
+    height: 40vh;
+    background: rgb(206, 170, 122);
+}
+.encode
+{
+    width: 40%;
+    margin-left: 10%;
+    padding-top: 80px;
+    float: left;
+}
+.encode h2
+{
+    color: rgb(110, 49, 6);
+    border-bottom: 10px dotted rgb(123, 73, 37);
+    display: inline;
+    padding: 10px;
+}
+.encode ol
+{
+    margin-top: 20px;
+    padding: 10px;
+    color: rgba(110, 49, 6);
+    font-size: 20px;
+}
+.decode
+{
+    width: 30%;
+    margin-left: 20%;
+    padding-top: 80px;
+    float: right;
+}
+.decode h2
+{
+    color: rgb(110, 49, 6);
+    border-bottom: 10px dotted rgb(123, 73, 37);
+    display: inline;
+    padding: 10px;
+}
+.decode ol
+{
+    margin-top: 20px;
+    padding: 10px;
+    color: rgb(110, 49, 6);
+    font-size: 20px;
+}
+.mainwork
+{
+    height: 260vh;
+    background: linear-gradient(rgba(206, 170, 122, 0.549),
+    rgba(206, 165,120,0.5),rgba(206,180,125, 0.708));
+}
+.e
+{
+    width: 70%;
+    margin-left: 5%;
+    padding-top: 80px;
+    float: left;
+}
+.e h2
+{
+    color: rgb(110, 49, 6);
+    border: 10px inset rgb(228, 154, 101);
+    display: inline;
+    padding: 10px 0;
+}
+.e form
+{
+    margin-top: 25px;
+    background-position: center;
+    background-size: cover;
+}
+.input
+{
+    padding: 10px;
+    font-size: 20px;
+    color: wheat;
+}
+input,textarea
+{
+    width: 90%;
+    padding: 10px;
+    background: transparent;
+    font-size: 20px;
+    color:aliceblue;
+}
+button
+{
+    padding: 20px;
+    color: rgb(110, 49, 6);
+    background-color: wheat;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 35%;
+}
+.d
+{
+    width: 70%;
+    margin-right: 2%;
+    padding-top: 80px;
+    float: right;
+}
+.d h2
+{
+    color: rgb(110, 49, 6);
+    border: 10px outset rgb(228, 154, 101);
+    display: inline;
+    padding: 10px 0;
+    margin-left: 76%;
+}
+.d form
+{
+    margin-top: 25px;
+    background-position: center;
+    background-size: cover;
+}
+.extract
+{
+    padding: 10px;
+    font-size: 15px;
+    color: wheat;
+    font-size: 20px;
+}
+.footer
+{
+    width: 100%;
+    height: 37vh;
+    background: rgb(206, 170, 122);
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    text-align: center;
+    padding-top: 80px;
+}
+.footer h2
+{
+    color: rgb(27, 22, 13);
+    border: 10px solid rgb(54, 33, 18);
+    display: inline;
+    padding: 10px;
+}
+.footer p
+{
+    margin: 40px auto 0;
+    font-size: 17px;
+    line-height: 20px;
+    padding: 10px;
+}
+.footer .id
+{
+    height:50px ;
+    width:50px;
+    margin-right:3vh;
+    margin-left:5vh;
+}
+.footer #id1{
+    margin-right: 7vh;
+}

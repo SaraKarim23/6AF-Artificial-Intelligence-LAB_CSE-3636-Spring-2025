@@ -1,0 +1,119 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HIDE & SEEK</title>
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .banner
+        {
+            background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url('{%static 'image/investigate2.jpg' %}');
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="logobar">
+            <h2>HIDE & SEEK</h2>
+            <img src="{% static 'image/logo.jpg' %}" class="icon" alt="icon">
+        </div>
+        <input type="checkbox" id="check">
+             <label for="check">
+               <i class="fa fa-bars" id="btn"></i>
+               <i class="fa fa-times" id="cancel"></i>
+             </label>
+            <div class="side-bar">
+                <div class="profile">
+                    {% if request.user.profile.photo %}
+                    <img src="{{ request.user.profile.photo.url }}" alt="Profile Photo" class="pp">
+                {% else %}
+                    <img src="{% static 'ICONS/profile.png' %}" alt="Default Profile Photo" class="pp">
+                {% endif %}
+                    <h3>{{ request.user }}</h3>
+                </div>
+                <ul>
+                    <li><a href="{% url 'Changepassword'%}">
+                        <span class="item"><img src="{%static 'ICONS/Change password.png'%}" alt="" class="itempic" id="logo3">Change Password</span>
+                    </a></li>
+                    <li><a href="{% url 'login_view' %}"  name="login"  id="login">
+                        <span class="item"><img src="{%static 'ICONS/logout.png'%}" alt="" class="itempic" id="logo4">Log Out</span>
+                    </a></li>
+                </ul>
+            </div>
+        <div class="topbar">
+            <ul>
+                <li><a href="{% url 'Home' %}">Home</a></li>
+                <li><a href="{% url 'About' %}">About</a></li>
+                <li><a href="#" name="topic" id="topic">Gallery</a>
+                    <div class="submenu">
+                     <ul>
+                         <li><a href="{% url 'Gallery1' %}">Encoded Photos<img src="{% static 'ICONS\k.png' %}" alt="" class="logo" id="logo1"></a></li>
+                         <li><a href="#" name="topic" id="topic">To-encode Photos<img src="{% static 'ICONS\unlock.png' %}" alt="" class="logo" id="logo2"></a></li>
+                     </ul>
+                    </div>
+                 </li>
+                 <li><a href="{% url 'message-validator' %}">Validate Message</a></li>
+            </ul>
+        </div>  
+        <div class="intro">
+            <h1>To-Encode Photos</h1>
+        </div>
+    </div> 
+</header>
+<body class="body">
+<div class="slide-container">
+    <div class="details">
+        <h2 style="text-align: center;color: rgb(74, 52, 23);font-style: italic;margin-bottom: 5vh;
+        font-family: Georgia, 'Times New Roman', Times, serif; border:5px solid rgba(52, 38, 14, 0.568);border-radius: 5px;">
+        These pictures can be used to transform into captivating carriers of hidden messages.<br></h2>
+    </div>
+        <span class="slider-span" id="slider-span1"></span>
+        <span class="slider-span" id="slider-span2"></span>
+        <span class="slider-span" id="slider-span3"></span>
+        <span class="slider-span" id="slider-span4"></span>
+        <span class="slider-span" id="slider-span5"></span>
+        <span class="slider-span" id="slider-span6"></span>
+        <span class="slider-span" id="slider-span7"></span>
+        <span class="slider-span" id="slider-span8"></span>
+
+<div class="image-slider">
+    <img src="{% static 'image\13.jpg' %}" alt="" class="img" id="img1"> 
+      <a href="#slider-span1" class="button" id="button-1"></a>
+
+    <img src="{% static 'image\15.jpg' %}" alt="" class="img" id="img2"> 
+    <a href="#slider-span2" class="button" id="button-2"></a>
+
+    <img src="{% static 'image\16.jpg' %}" alt="" class="img" id="img3"> 
+    <a href="#slider-span3" class="button" id="button-3"></a>
+
+    <img src="{% static 'image\24.jpg' %}" alt="" class="img" id="img4"> 
+    <a href="#slider-span4" class="button" id="button-4"></a>
+   
+    <img src="{% static 'image\20.jpg' %}" alt="" class="img" id="img5"> 
+    <a href="#slider-span5" class="button" id="button-5"></a>
+ 
+    <img src="{% static 'image\21.jpg' %}" alt="" class="img" id="img6"> 
+    <a href="#slider-span6" class="button" id="button-6"></a>
+   
+    <img src="{% static 'image\22.jpg' %}" alt="" class="img" id="img7"> 
+    <a href="#slider-span7" class="button" id="button-7"></a>
+
+    <img src="{% static 'image\23.jpg' %}" alt="" class="img" id="img8"> 
+    <a href="#slider-span8" class="button" id="button-8"></a>
+
+  </div>
+</div>
+<div class="footer">
+    <h2>Contact Us</h2>
+    <p>For further information and any enquiries/problems, contact the following e-mails:</p><br/>
+    <a href="mailto:c223202@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS\Fairuz.png' %}" class="id" id="id1"></a>
+    <a href="mailto:c223206@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS\Fayeza.png' %}" class="id" id="id2"></a><br/>
+    <h3 class="pid">&nbsp&nbsp&nbspC223202&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspC223206</h3>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Database file (ignored for clean repo)
+db.sqlite3
+
+# Ignore media uploads folder (user uploaded files)
+media/
+
+# Static files collected by Django (optional)
+staticfiles/
+
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Keep migrations (do NOT ignore migrations)
+/migrations/

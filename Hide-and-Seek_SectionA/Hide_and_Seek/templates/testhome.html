@@ -1,0 +1,141 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIDE & SEEK</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ font-awesome/5.15.4/css/all.min.css">
+<style>
+    .banner
+    {
+        background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url('{%static 'image/investigate2.jpg' %}');
+    }  
+    .e form
+    {
+    background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url('{%static 'image/encdec1.jpg' %}');
+    } 
+    .d form
+    {
+     background-image: linear-gradient(rgba(31, 14, 14, 0.733),rgba(61, 45, 23, 0.25)),url('{%static 'image/encdec2.jpg' %}');
+    }
+</style>
+</head>
+<body>
+    <div class="banner">
+        <div class="logobar">
+            <h2>HIDE & SEEK</h2>
+            <img src="{% static 'image/logo.jpg' %}" class="icon" alt="icon">
+        </div>
+        <input type="checkbox" id="check">
+             <label for="check">
+               <i class="fa fa-bars" id="btn"></i>
+               <i class="fa fa-times" id="cancel"></i>
+             </label>
+            <div class="side-bar">
+                <div class="profile">
+                {% if request.user.profile.photo %}
+                    <img src="{{ request.user.profile.photo.url }}" alt="Profile Photo" class="pp">
+                {% else %}
+                    <img src="{% static 'ICONS/profile.png' %}" alt="Default Profile Photo" class="pp">
+                {% endif %}
+                <h3>{{ request.user }}</h3>
+                </div>
+                <ul>
+                    <li><a href="{% url 'Changepassword'%}">
+                        <span class="item"><img src="{%static 'ICONS/Change password.png'%}" alt="" class="itempic" id="logo3">Change Password</span>
+                    </a></li>
+                    <li><a href="{% url 'login_view' %}"  name="login"  id="login">
+                        <span class="item"><img src="{%static 'ICONS/logout.png'%}" alt="" class="itempic" id="logo4">Log Out</span>
+                    </a></li>
+                </ul>
+            </div>
+        <div class="topbar">
+            <ul>
+             <li><a href="#" name="home" id="home">Home</a></li>
+             <li><a href="{% url 'About' %}">About</a></li>
+             <li><a href="#">Gallery</a>
+                <div class="submenu">
+                 <ul>
+                     <li><a href="{% url 'Gallery1' %}">Encoded Pictures<img src="{% static 'ICONS\k.png' %}" alt="" class="logo" id="logo1"></a></li>
+                     <li><a href="{% url 'Gallery2' %}">To-encode Pictures<img src="{% static 'ICONS\unlock.png' %}" alt="" class="logo" id="logo2"></a></li>
+                 </ul>
+                </div>
+             </li>
+            </ul>
+        </div>  
+        <div class="intro">
+            <h1>Home Page</h1>
+        </div>
+    </div>
+    <div class="encdec">
+        <div class="encode">
+            <h2>Encoding Rules:</h2>
+            <ol>
+                <li>Select a picture to encode.</li>
+                <li>Select a file to hide / Write a secret message to hide.</li>
+                <li>Set and confirm a password.</li>
+                <li>Click on the encode button.</li>
+            </ol>
+        </div>
+        <div class="decode">
+            <h2>Decoding Rules:</h2>
+            <ol>
+                <li>Select an already encoded picture.</li>
+                <li>Enter the required password.</li>
+                <li>Click on the decode button.</li>
+            </ol>
+        </div>
+    </div>
+    <div class="mainwork">
+        <div class="e">
+            <h2>ENCODING A PICTURE</h2>
+            <form type="encode">
+                <div class="input">
+                    <label for="photo">Select a photo (Max 3 MB): </label>
+                    <input type="file" name="photo" id="photo"><br>
+                    <label for="secretfile">Select a file to hide (Max 10 MB): </label>
+                    <input type="file" name="secretfile" id="secretfile"><br>
+                    <p>-----OR-----</p>
+                    <label for="secretmsg">Write a secret message (Max 5000 characters): </label>
+                    <textarea name="secretmsg" id="secretmsg" rows="8" ></textarea><br>
+                    <label for="pass">Set Password: </label>
+                    <input type="password" name="pass" id="pass"><br>
+                    <label for="cpass">Confirm Password: </label>
+                    <input type="password" name="cpass" id="cpass"><br><br>
+                    <button type="submit">ENCODE</button><br><br>
+                    <button type="button">DOWNLOAD ENCODED PHOTO</button><br>
+                </div>
+            </form>
+        </div>
+        <div class="d">
+            <h2>DECODING A PICTURE</h2>
+            <form type="decode">
+                <div class="extract">
+                    <label for="photo">Select an encoded photo (Max 4 MB): </label>
+                    <input type="file" name="photo" id="photo"><br>
+                    <p>-----OR-----</p>
+                    <label for="image">Enter encoded photo's URL (Max 4 MB): </label>
+                    <input type="text" name="image" id="image"><br><br>
+                    <label for="pass">Enter Password: </label>
+                    <input type="password" name="pass" id="pass"><br><br>
+                    <button type="submit">DECODE</button><br>
+                    <label for="outputmsg">Decoded Hidden Message: </label>
+                    <textarea name="outputmsg" id="outputmsg" rows="8" ></textarea><br>
+                    <p>-----OR-----</p>
+                    <button type="button">DOWNLOAD DECODED FILE</button><br>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Contact Us</h2>
+        <p>For further information and any enquiries/problems, contact the following e-mails:</p><br/>
+        <a href="mailto:c223202@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS\Fairuz.png' %}" class="id" id="id1"></a>
+        <a href="mailto:c223206@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS\Fayeza.png' %}" class="id" id="id2"></a><br/>
+        <h3 class="pid">&nbsp&nbsp&nbspC223202&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspC223206</h3>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Hide & Seek</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .banner {
+            background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url('{% static "image/investigate2.jpg" %}');
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <div class="banner">
+        <div class="logobar">
+            <h2>HIDE & SEEK</h2>
+            <img src="{% static 'image/logo.jpg' %}" class="icon" alt="icon">
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fa fa-bars" id="btn"></i>
+            <i class="fa fa-times" id="cancel"></i>
+        </label>
+        <div class="side-bar">
+            <div class="profile">
+                {% if request.user.profile.photo %}
+                    <img src="{{ request.user.profile.photo.url }}" alt="Profile Photo" class="pp">
+                {% else %}
+                    <img src="{% static 'ICONS/profile.png' %}" alt="Default Profile Photo" class="pp">
+                {% endif %}
+                <h3>{{ request.user }}</h3>
+            </div>
+            <ul>
+                <li><a href="{% url 'Changepassword' %}"><span class="item"><img src="{% static 'ICONS/Change password.png' %}" class="itempic">Change Password</span></a></li>
+                <li><a href="{% url 'login_view' %}"><span class="item"><img src="{% static 'ICONS/logout.png' %}" class="itempic">Log Out</span></a></li>
+            </ul>
+        </div>
+        <div class="topbar">
+            <ul>
+                <li><a href="{% url 'Home' %}">Home</a></li>
+                <li><a href="#" id="about">About</a></li>
+                <li>
+                    <a href="#">Gallery</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="{% url 'Gallery1' %}">Encoded Photos <img src="{% static 'ICONS/k.png' %}" class="logo"></a></li>
+                            <li><a href="{% url 'Gallery2' %}">To-encode Photos <img src="{% static 'ICONS/unlock.png' %}" class="logo"></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="{% url 'message-validator' %}">Validate Message</a></li>
+            </ul>
+        </div>
+        <div class="intro">
+            <h1>About The Website</h1>
+        </div>
+    </div>
+
+    <!-- IMAGE-BASED STEGANOGRAPHY SECTION -->
+    <div class="details">
+        <h2>What is Image-Based Steganography?</h2>
+        <p>Image-Based Steganography is a technique used to hide secret information within an image. 
+        The basic idea is to modify the image in a way that the changes are not visible to the naked eye, 
+        but a specialized program or tool can extract the hidden information.</p>
+    </div>
+
+    <!-- SERVICES AND VISUALS -->
+    <table style="width: 100%;">
+    <tr>
+        <!-- Left column: text -->
+        <td style="width: 30%; vertical-align: top;">
+            <div class="services" style="margin-top: 40px;">
+                <h2>Details Of The Services</h2><br><br><br>
+                <ul>
+                    <li><span class="data">🔒 Encoding: Hide messages inside photos to ensure privacy.</span></li>
+                    <li><span class="data">🔓 Decoding: Retrieve hidden messages from photos securely.</span></li>
+                    <li><span class="data">👤 User Privacy: Account-based services to ensure your data stays safe.</span></li>
+                    <li><span class="data">🔑 Password Management: Users can change their password anytime.</span></li>
+                    <li><span class="data">📷 Gallery 1 Access: Use from a wide range of images provided or upload your own to encode.</span></li>
+                    <li><span class="data">📷 Gallery 2 Access: Use from some already encoded pictures to share common messages.</span></li>
+                    <li><span class="data">📥 Download Support: Download any encoded or decoded image easily.</span></li>
+                </ul>
+            </div>
+        </td>
+
+        <!-- Middle column: 2 stacked images -->
+        <td style="width: 30%; vertical-align: top;">
+            <div class="chart">
+                <img src="{% static 'image/features.png' %}" alt="Features" style="max-height: 300px; width: 400px; margin-bottom: 10px;">
+                <img src="{% static 'image/process2.png' %}" alt="Process Chart" style="max-height: 300px; width: 400px;">
+            </div>
+        </td>
+
+        <!-- Right column: final image -->
+        <td style="width: 30%; vertical-align: top;">
+            <div class="image">
+                <img src="{% static 'image/glass.jpg' %}" alt="Illustration" style="max-width: 400px; height: 600px; margin-top: 100px;">
+        </td>
+    </tr>
+</table>
+
+
+    <!-- NEW AI INTEGRATION: CSP VALIDATION -->
+    <div class="details" style="background: #f5efe3; margin-top: 60px; padding: 40px 20px;">
+
+    <!-- Header -->
+    <h2 style="text-align: center; border: 5px solid #cc704b; padding: 10px; display: inline-block; background: #fff4dd;">
+        🔍 CSP-based Message Validator
+    </h2>
+
+    <!-- Intro Paragraph -->
+    <p style="background: #fddba2; padding: 15px; font-weight: bold;">
+        To enhance the safety and responsibility of hidden communication, we introduced an AI-powered feature built on
+        <strong>Constraint Satisfaction Problems (CSP)</strong>. Before any message is encoded, it must pass a smart
+        validation system that checks:
+    </p>
+
+    <!-- TWO-COLUMN SECTION: List + Image -->
+    <div style="display: flex; justify-content: space-between; gap: 40px; align-items: flex-start; margin: 30px 0;">
+
+        <!-- Left Side: List -->
+        <ul style="flex: 2; text-align: left; line-height: 1.8; margin-left: 20px; padding: 0; list-style: disc;">
+            <li>✅ Message length limits</li>
+            <li>✅ No hate speech or toxic words (based on a custom curated dataset)</li>
+            <li>✅ No banned or risky phrases</li>
+            <li>✅ No binary-like or suspicious encoding patterns</li>
+            <li>✅ Avoidance of ALL CAPS shouting or excessive punctuation</li>
+            <li>✅ Dictionary-based validation for meaningful content</li>
+            <li>✅ Detection of emojis or non-ASCII symbols</li>
+        </ul>
+
+        <!-- Right Side: Image -->
+        <div style="flex: 2;">
+            <img src="{% static 'image/encode.png' %}" alt="Encode" width="250px" height="150px">
+            <img src="{% static 'image/message.jpg' %}" alt="CSP Validator" style="width: 250px; height: 150px; border-radius: 12px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
+            <p style="font-size: 0.85em; color: #555; text-align: center; margin-top: 4px; padding:3%; width: 470px;">Encoding+Validating Illustration</p>
+        </div>
+    </div>
+
+    <!-- Final Paragraph -->
+    <p style="background: #fddba2; padding: 15px; font-weight: bold;">
+        This ensures that only clean, purposeful, and human-friendly messages are embedded into images.
+        The validator applies <strong>CSP logic</strong>, ensuring a lightweight,
+        privacy-friendly solution suitable even for smaller systems.
+    </p>
+
+</div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <h2>Contact Us</h2>
+        <p>For further information or queries, contact the following emails:</p><br/>
+        <a href="mailto:c223202@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS/Fairuz.png' %}" class="id" id="id1"></a>
+        <a href="mailto:c223206@ugrad.iiuc.ac.bd"><img src="{% static 'ICONS/Fayeza.png' %}" class="id" id="id2"></a><br/>
+        <h3 class="pid">&nbsp&nbsp&nbspC223202&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspC223206</h3>
+    </div>
+</body>
+</html>

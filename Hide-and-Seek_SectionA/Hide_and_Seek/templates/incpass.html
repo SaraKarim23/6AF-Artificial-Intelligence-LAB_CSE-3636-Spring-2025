@@ -1,0 +1,152 @@
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+html{
+overflow-x: hidden;
+}
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form-title{
+    text-align:center;
+    color:beige;
+}
+.navbar{
+   position: fixed;
+   top: 5px;
+   left: 1px;
+   width: 100%;
+   padding: 20px 100px;
+   background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));
+   display:flex ;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+   align-items:center;
+   color:rgb(240, 233, 219);
+   font-size:20px;
+}
+.logobar{
+   display:flex ;
+   justify-content:right;
+   align-items:center;
+   font-size:20px;
+   margin-right:-10vh;
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    /*background: linear-gradient(45deg,rgb(109, 98, 73),rgba(98, 91, 65, 0.844),rgb(216, 215, 215));*/
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/static/image/backgroundfinal.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.forms{
+    position:relative;
+    width: 520px;
+    height: 200px;
+    background:transparent;
+    border: 2px solid rgba(226, 206, 171, 0.729);
+    border-radius: 20px;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    font-size:20px;
+    color:antiquewhite;
+    text-align:center;
+}
+label{
+    width: 210px;
+    display:inline-block;
+    margin:0.5cm;
+    font-size:16px;
+    font-weight:bold;
+}
+input{
+    padding: 4px;
+    margin: 5px;
+    font-size:16px ;
+    border-radius: 10px ;
+    border: 1px solid #f9f9f9;
+    width: 7cm;
+}
+.icon{
+    width: 50px;
+    clip-path: circle();
+}
+.login
+{
+    background: rgb(243, 234, 217);
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+a
+{
+    width: 200px;
+    margin: 20px 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 17px;
+    border: 2px solid wheat;
+    border-radius: 25px;
+    color: rgb(248, 181, 134);
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    top:50px;
+}
+span
+{
+    background: rgb(243, 234, 217);
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+a:hover span
+{
+    width: 100%;
+}
+</style>
+  <title>Incorrec_Current_Password</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="logobar">
+            <h3>HIDE & SEEK</h3>
+            <img src="{%static 'image/logo.jpg'%}" class="icon" alt="icon">
+        </div>
+    </nav>
+  </header>
+       <main>
+            <div class="forms">
+              <h2 id="here">
+                 <br>Sorry, your current password is incorrect.
+              </h2>
+            <div>
+                <a href="{% url 'Changepassword'%}"><span></span>CHANGE  PASSWORD</a>
+            </div>
+        </form>
+        </div>        
+</main>
+</body>

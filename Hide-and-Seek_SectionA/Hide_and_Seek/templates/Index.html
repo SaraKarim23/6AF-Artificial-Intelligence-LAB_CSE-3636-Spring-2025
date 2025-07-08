@@ -1,0 +1,24 @@
+{%load static%}
+<html>
+    <head>
+        <title>HIDE & SEEK</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
+    </head>
+    <body>
+        <div class="banner">
+            <div class="logo">
+                <img src="{%static 'image/logo.jpg'%}" class="icon" alt="icon">
+            </div>
+            <div class="home">
+                <h1>HIDE & SEEK</h1>
+                <h2>An Image-Based Steganography Website</h2>
+                <p>
+                    <h3>A technique for concealing secret information within an image by imperceptibly modifying 
+                        its visual content <br>or manipulating its frequency domain representation.</h3><br>
+                </p>
+                <a href="{% url 'handleSignup'%}" name="signup" id="signup"><span></span>SIGN UP</a>
+                <a href="{% url 'login_view' %}"  name="login"  id="login"><span></span>LOG IN</a>
+            </div>
+        </div>
+    </body>
+</html>

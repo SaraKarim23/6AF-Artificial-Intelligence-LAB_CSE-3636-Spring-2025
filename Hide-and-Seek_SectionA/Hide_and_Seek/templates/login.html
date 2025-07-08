@@ -1,0 +1,170 @@
+{%load static%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ssw{
+    text-align:center;
+    color:beige;
+}
+.navbar{
+   position: fixed;
+   top: 5px;
+   left: 1px;
+   width: 100%;
+   padding: 20px 100px;
+   background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0));
+   display:flex ;
+   flex-direction: row-reverse;
+   justify-content: space-between;
+   align-items:center;
+   color:rgb(240, 233, 219);
+   font-size: 20px;
+}
+.logobar{
+   display:flex ;
+   justify-content:right;
+   align-items:center;
+   margin-right: -10vh;
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/static/image/backgroundfinal.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.forml{
+    position:relative;
+    width: 580px;
+    height: 400px;
+    background: transparent;
+    border: 2px solid rgba(226, 206, 171, 0.566);
+    border-radius: 20px;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    font-size:20px;
+    color:antiquewhite;
+}
+label{
+    width: 210px;
+    display:inline-block;
+    margin:0.5cm;
+    font-size:16px;
+    font-weight:bold;
+}
+input{
+    padding: 4px;
+    margin: 5px;
+    font-size:16px ;
+    border-radius: 10px ;
+    border: 1px solid #f9f9f9;
+    width: 7cm;
+}
+.icon{
+    width: 50px;
+    clip-path: circle();
+}
+#b3{
+    background-color:rgb(250, 224, 200);
+    color:#050400f7;
+}
+#b3:hover{
+    background-color: rgba(237, 230, 204, 0.786);
+    color:#2e2c22;
+}
+#extra{
+    text-align: center;
+}
+#extra a{
+    color:rgb(252, 212, 185);
+}
+.eye {
+    position: absolute;
+    right: 70px; /* Distance from the right edge of the input */
+    top: 49%;
+    transform: translateY(-50%); /* Vertically center the icon */
+    cursor: pointer; /* Makes the icon clickable */
+        }
+#hide1{
+    color: rgb(81, 79, 78);
+    display: none;
+    }
+#hide2{
+   color: rgb(95, 93, 92);
+    }
+</style>
+<title>Login</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logobar">
+                <h3>HIDE & SEEK</h3>
+                <img src="{%static 'image/logo.jpg'%}" class="icon" alt="icon">
+            </div>
+        </nav>
+      </header>
+<div class="forml">
+    <form action="/login" method="post" class="login">{% csrf_token %}
+    <h2 class="ssw"><u><i><br>LOG IN</i></u></h2><br>
+<form>
+        <div>
+            <label for="user_name">Enter Username:</label>
+            <input type="text" name="username" id="user_name">
+            <i class='bx bxs-user-circle'></i>
+        </div><br>
+        <div>
+            <label for="password">Enter Password:</label>
+            <input type="password" name="password" id="password">
+            <span class="eye" onclick=" myfunction()">
+                                <i id="hide1" class="fa-solid fa-eye"></i>
+                                <i id="hide2" class="fa-regular fa-eye-slash"></i>
+            </span>
+            <i class='bx bx-lock'></i>
+        </div><br>
+       <div class="ssw">
+            <input type="submit" value="LOG IN" id="b3">
+        </div> <br>
+        <div id="extra">
+            <p>Don't have an account?&nbsp&nbsp<a href="{% url 'handleSignup'%}" name="signup" id="signup"><b>SIGN UP</b></a><br></p>
+        </div>
+</form>
+</div>
+
+<script>
+         function myfunction(){
+            var x = document.getElementById("password");
+            var z = document.getElementById("hide1");
+            var u = document.getElementById("hide2");
+
+            if(x.type==='password'){
+                x.type ="text";
+                z.style.display = "block";
+                u.style.display = "none";
+            }
+
+            else{
+                x.type ="password";
+                z.style.display = "none";
+                u.style.display = "block";
+            }
+        }
+</script>
+</body>
