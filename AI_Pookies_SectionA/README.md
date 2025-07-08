@@ -44,4 +44,17 @@ The frontend is styled with **Tailwind CSS** and **Bootstrap**, while the backen
 - **HTML / CSS / JS** – for frontend structure and interactivity
 
 ---
+## 🖥️ Screenshots
+
+### 🏠 Home Page  
+![Home Page](img/home.png)
+
+### 🤖 Prediction Page  
+![Prediction Page](img/predict.png)
+
+### 📞 Contact Us Page  
+![Contact Page](img/contact.png)
+
+## ℹ️ About Us Page  
+![About Page](img/about.png)
 
