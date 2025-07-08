@@ -1,3 +1,5 @@
+---
+
 # ✨ Assalamu Alaikum 
 
 ---
@@ -48,6 +50,8 @@ This is a simple and interactive web app built with **Streamlit** that helps ana
 1. Download the notebook file
 2. Open it using VS Code or Kaggle Notebook
 
+---
+
 ## ▶️ For more details
 
 Check the PDF **“Project Report by C223205 and C223215”**
@@ -56,11 +60,16 @@ Check the PDF **“Project Report by C223205 and C223215”**
 
 ## 🙋‍♀️ Authors
 
-* Syeda Afra Anam (C223205)
-  Department of CSE, International Islamic University Chittagong
+* Syeda Afra Anam
+* C223205
+* Department of CSE
+* International Islamic University Chittagong
 
-* Sumaiya Akter Emo (C223215)
-  Department of CSE, International Islamic University Chittagong
+
+* Sumaiya Akter Emo
+* C223215
+* Department of CSE
+* International Islamic University Chittagong
 
 ---
 
