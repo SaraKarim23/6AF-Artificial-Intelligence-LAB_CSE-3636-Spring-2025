@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Waiter</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='robot.png') }}">
+    <style>
+      .chessboard {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        width: 630px;
+        height: 594px;
+        margin: 0 auto;
+      }
+      .square { width: 70px; height: 66px; }
+      .black { background-color: #b58863; }
+      .white { background-color: #f0d9b5; }
+      .wall { background-color: rgb(19, 14, 14); }
+      .kitchen {
+        background-image: url("{{ url_for('static', filename='kitchen.png') }}");
+        background-size: cover;
+      }
+      .food {
+        background-image: url("{{ url_for('static', filename='table.png') }}");
+        background-size: cover;
+        cursor: pointer;
+      }
+      .active-waiter {
+        background: url("{{ url_for('static', filename='robot.png') }}");
+        background-size: cover;
+      }
+      .selectBadge { cursor: pointer; }
+      /* Optional: style the modal badges for better UX */
+      .selectBadge { font-size: 1.2em; padding: 0.8em 1.5em; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Headers Section -->
+      <header class="d-flex justify-content-center py-3 bg-dark text-white">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#feature" class="nav-link">AI Waiter</a>
+          </li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="px-4 py-5 my-5 text-center" id="hero">
+        <img
+          class="d-block mx-auto mb-4"
+          src="{{ url_for('static', filename='robot.png') }}"
+          alt="Robot"
+          width="100"
+          height="100"
+        />
+        <h1 class="display-5 fw-bold">Introducing the Future of Hospitality</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Meet my AI-powered waiter, revolutionizing the dining experience
+            with personalized service and unparalleled efficiency. My AI waiter
+            can take orders, provide foods, all while ensuring accurate and
+            prompt service. With its advanced A* processing
+            capabilities.
+          </p>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="px-4 py-3 text-center" id="feature">
+        <h1 class="display-5 fw-bold">AI Waiter</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">
+            Interact with the AI waiter by selecting table and order options.
+          </p>
+        </div>
+      </section>
+
+      <div class="container mb-4">
+        <div class="chessboard"></div>
+        <button
+          id="submitBtn"
+          type="button"
+          class="btn btn-primary mx-auto d-block my-2"
+          onclick="submitOrder()"
+        >
+          Submit
+        </button>
+        <ul id="orderList" class="list-group my-3"></ul>
+      </div>
+
+      <!-- About Section -->
+      <section class="py-3 py-md-5 py-xl-8" id="about">
+        <h1 class="display-5 py-3 fw-bold text-center">About Us</h1>
+        <div class="container">
+          <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+            <div class="col-12 col-lg-6 col-xl-5">
+              <img
+                class="img-fluid rounded"
+                loading="lazy"
+                src="{{ url_for('static', filename='robot.png') }}"
+                alt="C213205_Soalehin"
+                width="500"
+                height="500"
+              />
+            </div>
+            <div class="col-12 col-lg-6 col-xl-7">
+              <div class="row justify-content-xl-center">
+                <div class="col-12 col-xl-11">
+                  <p class="lead fs-4 text-secondary mb-3">
+                    C213205_Soalehin Priya
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="d-flex justify-content-center py-3 mt-3 bg-dark text-white">
+        <!-- <p>Copyright ©2024 AI Waiter | All rights reserved</p> -->
+      </footer>
+    </main>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
