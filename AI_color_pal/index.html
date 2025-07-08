@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Color Palette Generator</title>
+</head>
+<body>
+    <h1>Upload an image to generate color palette</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if uploaded_image %}
+        <h2>Original Image</h2>
+        <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" width="300">
+
+        <h2>Palette Bar</h2>
+        <img src="{{ url_for('static', filename='uploads/' + palette_image) }}" width="300">
+
+        <h2>Color Codes and Names</h2>
+        <ul>
+        {% for hex, name in zip(hex_codes, color_names) %}
+            <li>{{ hex }} — {{ name }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
