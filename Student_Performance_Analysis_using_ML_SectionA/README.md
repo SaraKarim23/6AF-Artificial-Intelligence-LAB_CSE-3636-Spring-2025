@@ -60,16 +60,18 @@ Check the PDF **“Project Report by C223205 and C223215”**
 
 ## 🙋‍♀️ Authors
 
-* Syeda Afra Anam
-* C223205
-* Department of CSE
-* International Islamic University Chittagong
+ Syeda Afra Anam
+ C223205
+ 6AF, 6th Semeseter
+ Department of CSE
+ International Islamic University Chittagong
 
 
-* Sumaiya Akter Emo
-* C223215
-* Department of CSE
-* International Islamic University Chittagong
+ Sumaiya Akter Emo
+ C223215
+ 6AF, 6th Semeseter
+ Department of CSE
+ International Islamic University Chittagong
 
 ---
 
