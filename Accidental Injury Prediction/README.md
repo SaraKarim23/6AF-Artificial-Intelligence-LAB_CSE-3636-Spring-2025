@@ -18,12 +18,15 @@ Compares multiple machine learning models to ensure optimal accuracy.
 👥 Contributions & Roles:
 
 **Bibi Ayesha Akhtar Omera — ID: C223204**
+
 Role: Data preprocessing, model training, performance tuning.
 
 **Zannatun Naim — ID: C223207**
+
 Role: Feature selection, model evaluation, report writing.
 
 **Fahmida Yasmin — ID: C223210**
+
 Role: Interface design, system integration, documentation.
 
 ⚙ Tech Stack:
