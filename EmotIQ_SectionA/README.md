@@ -91,6 +91,7 @@ only the relevant portion (Region of Interest - ROI) is fed to the emotion class
 
 * Five Emotion Categories
 The model classifies emotions into five key categories:
+
 a) 'Angry'
 
 b) 'Disgust'
