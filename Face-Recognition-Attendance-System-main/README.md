@@ -1,3 +1,8 @@
+# Project Description
+ 
+
+**Face Recognition Attendance System** is an AI-powered solution that automatically records attendance by identifying faces through a camera. It uses facial recognition algorithms to detect and verify individuals in real time, eliminating the need for manual attendance or ID cards. This system enhances accuracy, prevents proxy attendance, and saves time in schools, offices, and events.
+
  C213220- Shajia Sultana ---> Backend, Model Integration, and Database
  
 •	Designing and creating the MySQL database schema (attendance-db.sql) to store user information and attendance records.
