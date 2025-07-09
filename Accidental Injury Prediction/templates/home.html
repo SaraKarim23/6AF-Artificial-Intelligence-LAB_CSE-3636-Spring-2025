@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accidental Injury Prediction</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .login {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login div {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .input-text {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        select.input-text {
+            appearance: none;
+            background-color: #dcfff9;
+            color: #000000;
+            cursor: pointer;
+        }
+        select.input-text:hover {
+            border: 2px solid #00d8a9;
+            
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #116f25;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Accidental Injury Prediction</h1>
+        <form action="{{url_for('predict')}}" method="post">
+            
+            <div class="Age">
+                <label for="Age">Age:</label>
+                <select class="input-text" name="Age" id="Age">
+                  <option value="0">18-30</option>
+                  <option value="1">30-50</option>
+                  <option value="3">Under 18</option>
+                  <option value="2">Over 51</option>
+                  <option value="4">UNKNOWN</option>
+                </select>
+            </div>
+
+            <div class="Gender">
+                <label for="Gender">Gender:</label>
+                <select class="input-text" name="Gender" id="Gender">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                    <option value="2">uNKNOWN</option>
+                </select>
+            </div>
+
+            <div class="Educational_level">
+                <label for="Educational_level">Educational Level:</label>
+                <select class="input-text" name="Educational_level" id="Educational_level">
+                    <option value="0">Above high school</option>
+                    <option value="4">Junior high school</option>
+                    <option value="5">Unknown</option>
+                    <option value="1">Elementary school</option>
+                    <option value="2">High school</option>
+                    <option value="3">Illiterate</option>
+                    <option value="6">Writing & reading</option>
+                </select>
+            </div>
+
+
+            <div class="Vehicle_driver_relationl">
+                <label for="Vehicle_driver_relation">Vehicle Driver Relation:</label>
+                <select class="input-text" name="Vehicle_driver_relationl" id="Vehicle_driver_relation">
+                    <option value="0">Employee</option>
+                    <option value="3">Unknown</option>
+                    <option value="2">Owner</option>
+                    <option value="1">Other</option>
+                </select>
+            </div>
+
+            <div class="Driving_experience">
+                <label for="Driving_experience">Driving Experience:</label>
+                <select class="input-text" name="Driving_experience" id="Driving_experience">
+                    <option value="0">1-2yr</option>
+                    <option value="3">Above 10yr</option>
+                    <option value="2">5-10yr</option>
+                    <option value="1">2-5yr</option>
+                    <option value="6">Unknown</option>
+                    <option value="5">No Licence</option>
+                    <option value="4">Below 1yr</option>
+                </select>
+            </div>
+
+            <div class="Lanes_or_Medians">
+                <label for="Lanes_or_Medians">Lanes or Medians:</label>
+                <select class="input-text" name="Lanes_or_Medians" id="Lanes_or_Medians">
+                    <option value="5">Unknown</option>
+                    <option value="4">Undivided Two way</option>
+                    <option value="6">other</option>
+                    <option value="0">Double carriageway (median)</option>
+                    <option value="1">One way</option>
+                    <option value="3">Two-way (divided with solid lines road marking)</option>
+                    <option value="2">Two-way (divided with broken lines road marking)</option>
+                </select>
+            </div>
+
+            <div class="Types_of_Junction">
+                <label for="Types_of_Junction">Types of Junction:</label>
+                <select class="input-text" name="Types_of_Junction" id="Types_of_Junction">
+                    <option value="1">No junction</option>
+                    <option value="7">Y Shape</option>
+                    <option value="0">Crossing</option>
+                    <option value="2">O Shape</option>
+                    <option value="3">Other</option>
+                    <option value="5">Unknown</option>
+                    <option value="4">T Shape</option>
+                    <option value="6">X Shape</option>
+                </select>
+            </div>
+
+            <div class="Road_surface_type">
+                <label for="Road_surface_type">Road Surface Type:</label>
+                <select class="input-text" name="Road_surface_type" id="Road_surface_type">
+                    <option value="0">Asphalt roads</option>
+                    <option value="1">Earth roads</option>
+                    <option value="4">Unknown</option>
+                    <option value="2">Gravel roads</option>
+                    <option value="3">Other</option>
+                </select>
+            </div>
+
+            <div class="Light_conditions">
+                <label for="Light_conditions">Light Conditions:</label>
+                <select class="input-text" name="Light_conditions" id="Light_conditions">
+                    <option value="3">Daylight</option>
+                    <option value="0">Darkness - lights lit</option>
+                    <option value="2">Darkness - no lighting</option>
+                    <option value="1">Darkness - lights unlit</option>
+                </select>
+            </div>
+
+
+            <div class="Weather_conditions">
+                <label for="Weather_conditions">Weather Conditions:</label>
+                <select class="input-text" name="Weather_conditions" id="Weather_conditions">
+                    <option value="2">Normal</option>
+                    <option value="4">Raining</option>
+                    <option value="5">Raining and Windy</option>
+                    <option value="0">Cloudy</option>
+                    <option value="3">Other</option>
+                    <option value="8">Windy</option>
+                    <option value="6">Snow</option>
+                    <option value="7">Unknown</option>
+                    <option value="1">Fog or mist</option>
+                </select>
+            </div>
+
+            <div class="Type_of_collision">
+                <label for="Type_of_collision">Type of Collision:</label>
+                <select class="input-text" name="Type_of_collision" id="Type_of_collision">
+                    <option value="3">Collision with roadside-parked vehicles</option>
+                    <option value="8">Vehicle with vehicle collision</option>
+                    <option value="2">Collision with roadside objects</option>
+                    <option value="0">Collision with animals</option>
+                    <option value="5">Other</option>
+                    <option value="6">Rollover</option>
+                    <option value="4">Fall from vehicles</option>
+                    <option value="1">Collision with pedestrians</option>
+                    <option value="9">With Train</option>
+                    <option value="7">Unknown</option>
+                </select>
+            </div>
+
+            <div class="Vehicle_movement">
+                <label for="Vehicle_movement">Vehicle Movement:</label>
+                <select class="input-text" name="Vehicle_movement" id="Vehicle_movement">
+                    <option value="2">Going straight</option>
+                    <option value="10">U-Turn</option>
+                    <option value="3">Moving Backward</option>
+                    <option value="9">Turnover</option>
+                    <option value="12">Waiting to go</option>
+                    <option value="1">Getting off</option>
+                    <option value="1">Reversing</option>
+                    <option value="7">Unknown</option>
+                    <option value="11">Parked</option>
+                    <option value="6">Stopping</option>
+                    <option value="8">Overtaking</option>
+                    <option value="5">Other</option>
+                    <option value="4">Entering a junction</option>
+                   
+                </select>
+            </div>
+
+            <div class="Pedestrian_movement">
+                <label for="Pedestrian_movement">Pedestrian Movement:</label>
+                <select class="input-text" name="Pedestrian_movement" id="Pedestrian_movement">
+                    <option value="5">Not a Pedestrian</option>
+                    <option value="0">Crossing from driver's nearside</option>
+                    <option value="1">Crossing from nearside - masked by parked or statioNot a Pedestrianry vehicle</option>
+                    <option value="6">Unknown or other</option>
+                    <option value="2">Crossing from offside - masked by  parked or statioNot a Pedestrianry vehicle</option>
+                    <option value="3">In carriageway, statioNot a Pedestrianry - not crossing  (standing or playing)</option>
+                    <option value="7">Walking along in carriageway, back to traffic</option>
+                    <option value="8">Walking along in carriageway, facing traffic</option>
+                    <option value="4">In carriageway, statioNot a Pedestrianry - not crossing  (standing or playing) - masked by parked or statioNot a Pedestrianry vehicle</option>
+                </select>
+            </div>
+
+            <div class="Cause_of_accident">
+                <label for="Cause_of_accident">Cause of Accident:</label>
+                <select class="input-text" name="Cause_of_accident" id="Cause_of_accident">
+                    <option value="9">Moving Backward</option>
+                    <option value="6">Overtaking</option>
+                    <option value="0">Changing lane to the left</option>
+                    <option value="1">Changing lane to the right</option>
+                    <option value="14">Overloading</option>
+                    <option value="13">Other</option>
+                    <option value="12">No priority to vehicle</option>
+                    <option value="11">No priority to pedestrian</option>
+                    <option value="10">No distancing</option>
+                    <option value="7">Getting off the vehicle improperly</option>
+                    <option value="8">Improper parking</option>
+                    <option value="15">Overspeed</option>
+                    <option value="3">Driving carelessly</option>
+                    <option value="2">Driving at high speed</option>
+                    <option value="4">Driving to the left</option>
+                    <option value="19">Unknown</option>
+                    <option value="17">Overturning</option>
+                    <option value="18">Turnover</option>
+                    <option value="5">Driving under the influence of drugs</option>
+                    <option value="6">Drunk driving</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
