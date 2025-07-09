@@ -188,7 +188,7 @@ Managed integration of EEG signal analysis
   Verified accuracy with sample inputs
 
 
-This project is all about identify the real emotions by a trained AI model. Hope this project will waork and bring satisfaction.
+This project is all about identifying the real emotions by a trained AI model. Hope this project will waork and bring satisfaction.
 Thank you.
 
 
