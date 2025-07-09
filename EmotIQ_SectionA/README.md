@@ -9,13 +9,14 @@ Due to GitHub file size limits, please download the following files manually:
 [Download fer2013.csv](https://drive.google.com/file/d/127d9TDp6zt7KsBIDEOAXOmgKVPoTk_NX/view?usp=drive_link)
 ➡️ After downloading, place the files in the project folder:
 
-Team Member:
+Team Member:👩‍💻
 Souriya Sultana(C223212)
 Umama Morshed(C223220)
 Tasnim Showkat Diba(C223225)
 
 
-Project Description:
+✒️Project Description:
+
 EmotIQ is a deep learning-based emotion detection system that leverages computer vision to
 recognize and classify human emotions in real-time using a webcam. It utilizes a Convolutional
 Neural Network (CNN) trained on the FER2013 dataset to detect key facial expressions.
@@ -27,7 +28,8 @@ By providing instant emotional feedback, EmotIQ enhances human-computer interact
 Its real-time response makes it ideal for live monitoring environments.
 
 
-Objectives:
+✒️Objectives:
+
  To detect and classify human emotions from facial expressions using image data.
  To build and train a CNN model for high-accuracy real-time emotion classification.
  To integrate OpenCV for live face detection and classification via webcam.
@@ -42,7 +44,8 @@ distance).
  To explore use cases in mental health monitoring, customer service, and smart
 systems
 
-Software Requirements:
+✒️Software Requirements:
+
 Python 3.x – Programming language
 TensorFlow/Keras – Deep learning framework
 OpenCV – Face detection and webcam integration
@@ -51,7 +54,8 @@ Matplotlib – Optional, for visualization
 FER2013 Dataset – Training data
 
 
-Features :
+✒️Features :
+
 The EmotIQ system includes several cutting-edge features that enable real-time emotion
 detection using facial expressions. These features make it applicable in AI systems requiring
 emotional awareness and user engagement.
@@ -94,7 +98,8 @@ EmotIQ runs directly from the terminal using python test.py, making it simple an
 accessible for testing or integration with larger systems.
 
 
-Purpose:
+✒️Purpose:
+
 The primary purpose of the EmotIQ – Brainwave Emotion Recognition system is to create an
 interactive tool that can understand and respond to human emotional states using facial
 expressions. In today’s digital world, emotion-aware systems are increasingly important across
@@ -124,7 +129,8 @@ By recognizing the user's mood, digital assistants can respond more naturally an
 empathetically.
 
 
-Output:
+✒️Output:
+
 During execution (python test.py):
  The webcam window opens.
  The system detects faces in real-time.
@@ -137,15 +143,18 @@ Detected: Sad 😢
 Detected: Surprise 😲
 
 
-Conclusion:
+✒️Conclusion:
+
 The EmotIQ project successfully implements a real-time facial emotion recognition system
 using CNNs and OpenCV. It classifies five basic emotions with considerable accuracy. With
 further improvements like data augmentation, facial landmarks, and more emotion classes, it
 can be integrated into advanced AI systems, providing machines with emotional intelligence.
 
 
-Contributors and Roles:
-[C223212-Souriya Sultana]-Data Scientist & Model Trainer
+📌📌Contributors and Roles:
+
+🏷[C223212-Souriya Sultana]-
+Data Scientist & Model Trainer
 
 Collected and preprocessed EEG and facial emotion datasets (e.g., FER-2013)
 
@@ -155,7 +164,8 @@ Tuned hyperparameters and improved model accuracy
 
 Contributed to performance analysis and result validation
 
-[C223220-Umama Morshed]- Hardware & Integration Specialist
+🏷[C223220-Umama Morshed]- 
+Hardware & Integration Specialist
 
 Handled EEG device setup and signal acquisition
 
@@ -165,7 +175,8 @@ Conducted system testing, debugging, and validation
 
 Assisted in documentation and presentation design
 
-[C223225-Tasnim Showkat Diba]-Project Lead & AI Developer
+🏷[C223225-Tasnim Showkat Diba]-
+Project Lead & AI Developer
 
 Designed the overall system architecture
 
