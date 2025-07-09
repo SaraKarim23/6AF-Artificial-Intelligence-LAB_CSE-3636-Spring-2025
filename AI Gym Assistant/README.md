@@ -1,5 +1,7 @@
 # 💪 AI Gym Assistant
 
+> ID: C213214R
+
 The **AI Gym Assistant** is a computer vision-based fitness tool that helps users monitor and count exercise repetitions in real time. Utilizing the webcam and AI-powered pose estimation, it tracks user movement during arm curls and squats, providing immediate visual feedback and a counter for each exercise.
 
 ---
