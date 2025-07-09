@@ -144,3 +144,54 @@ further improvements like data augmentation, facial landmarks, and more emotion 
 can be integrated into advanced AI systems, providing machines with emotional intelligence.
 
 
+Contributors and Roles:
+[C223212-Souriya Sultana]-Data Scientist & Model Trainer
+
+Collected and preprocessed EEG and facial emotion datasets (e.g., FER-2013)
+
+Trained and evaluated machine learning models
+
+Tuned hyperparameters and improved model accuracy
+
+Contributed to performance analysis and result validation
+
+[C223220-Umama Morshed]- Hardware & Integration Specialist
+
+Handled EEG device setup and signal acquisition
+
+Connected hardware with the software pipeline
+
+Conducted system testing, debugging, and validation
+
+Assisted in documentation and presentation design
+
+[C223225-Tasnim Showkat Diba]-Project Lead & AI Developer
+
+Designed the overall system architecture
+
+Developed the emotion recognition model using CNN
+
+Implemented face detection using Haar Cascade and real-time processing
+
+Managed integration of EEG signal analysis
+
+ ***Integrate CNN-based emotion detection with real-time EEG and face input details:
+
+  Added face detection using Haar Cascade
+
+  Connected trained CNN model (Emotion_Detection.h5) for emotion classification
+
+  Integrated real-time EEG input with emotion prediction
+
+  Displayed predicted emotion labels on webcam feed
+
+  Verified accuracy with sample inputs
+
+
+This project is all about identify the real emotions by a trained AI model. Hope this project will waork and bring satisfaction.
+Thank you.
+
+
+
+
+
