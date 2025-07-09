@@ -29,7 +29,7 @@ By providing instant emotional feedback, EmotIQ enhances human-computer interact
 Its real-time response makes it ideal for live monitoring environments.
 
 
-Objectives:
+➤ Objectives:
 1. To detect and classify human emotions from facial expressions using image data.
 
 2. To build and train a CNN model for high-accuracy real-time emotion classification
@@ -51,7 +51,7 @@ Objectives:
 10. To explore use cases in mental health monitoring, customer service, and smart systems
     
 
-Software Requirements:
+🔒 Software Requirements:
 
 # Python 3.x – Programming language
 
@@ -66,7 +66,7 @@ Software Requirements:
 # FER2013 Dataset – Training data
 
 
-Features :
+🚀 Features :
 The EmotIQ system includes several cutting-edge features that enable real-time emotion
 detection using facial expressions. These features make it applicable in AI systems requiring
 emotional awareness and user engagement.
@@ -116,7 +116,7 @@ EmotIQ runs directly from the terminal using python test.py, making it simple an
 accessible for testing or integration with larger systems.
 
 
-Purpose:
+📝 Purpose:
 The primary purpose of the EmotIQ – Brainwave Emotion Recognition system is to create an
 interactive tool that can understand and respond to human emotional states using facial
 expressions. In today’s digital world, emotion-aware systems are increasingly important across
@@ -206,7 +206,7 @@ Contributors and Roles:
 
 🎨 Managed integration of EEG signal analysis
 
- ***Integrate CNN-based emotion detection with real-time EEG and face input details:
+ ➤ Integrate CNN-based emotion detection with real-time EEG and face input details:
 
   🔥 Added face detection using Haar Cascade
 
