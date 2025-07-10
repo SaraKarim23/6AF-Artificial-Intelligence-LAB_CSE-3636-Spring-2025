@@ -1,0 +1,15 @@
+{
+    "name": "hp/techbrew",
+    "autoload": {
+        "psr-4": {
+            "Hp\\Techbrew\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Israth29",
+            "email": "israthjahanworthy29@gmail.com"
+        }
+    ],
+    "require": {}
+}
