@@ -68,23 +68,6 @@ Bot: Your BMI is 22.5 – considered normal. Enjoy a light roast americano!
 
 
 ---
-📂 Project Structure
-
-
-
-techbrew/
-├── home.php
-├── db.php
-├── menu.php
-├── save\_chat.php
-├── product.js
-├── test\_flask.py / app.py
-├── templates/
-├── static/
-│   ├── images/
-│   ├── CSS/
-│   └── JS/
-
 
  ⚙ Setup Instructions
 
@@ -103,7 +86,8 @@ techbrew/
 * Run chatbot backend:
 
   bash
-  python app.py
+  python techbrew_bot.py
+  python test_flask.py
   
 
 ### 3. .env Setup (Optional)
