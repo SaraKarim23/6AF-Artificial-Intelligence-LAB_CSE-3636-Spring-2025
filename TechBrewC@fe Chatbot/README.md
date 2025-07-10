@@ -86,7 +86,9 @@ Bot: Your BMI is 22.5 – considered normal. Enjoy a light roast americano!
 * Run chatbot backend:
 
   bash
+  
   python techbrew_bot.py
+
   python test_flask.py
   
 
